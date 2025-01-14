@@ -15,5 +15,8 @@ let preIncrement; // 전위 증가 연산
 
 // TODO: num에 대한 후위, 전위 연산을 각각 수행하고 결과를 postIncrement와 preIncrement에 할당하세요.
 
+postIncrement = num++;
+preIncrement = ++num;
+
 // export 를 수정하지 마세요.
 export { postIncrement, preIncrement };
