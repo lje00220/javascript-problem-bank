@@ -14,7 +14,13 @@
  * @returns {number[]} 변환된 배열
  */
 
-function transformData(arr, threshold) {}
+function transformData(arr, threshold) {
+  return arr
+    .filter((x) => x % 2 === 0)
+    .map((x) => x * x)
+    .filter((x) => x <= threshold)
+    .sort((x, y) => y - x);
+}
 
 // export 를 수정하지 마세요.
 export { transformData };

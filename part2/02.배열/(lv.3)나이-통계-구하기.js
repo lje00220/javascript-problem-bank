@@ -10,7 +10,10 @@
  * @returns {{ averageAge: number, maxAge: number }}
  */
 
-function calculateStatistics(users) {}
+function calculateStatistics(users) {
+  let maxAge = users.reduce((preV, curV) => Math.max(preV.age, curV.age), 0);
+  console.log(maxAge);
+}
 
 // export 를 수정하지 마세요.
 export { calculateStatistics };
