@@ -11,8 +11,12 @@
  */
 
 function calculateStatistics(users) {
-  let maxAge = users.reduce((preV, curV) => Math.max(preV.age, curV.age), 0);
-  console.log(maxAge);
+  let maxAge = users.reduce((preV, curV) => Math.max(preV, curV.age), -123456);
+  let averageAge =
+    users.reduce((preV, curV) => preV + curV.age, 0) / users.length;
+  console.log(averageAge, maxAge);
+  if (users.length === 0) [maxAge, averageAge] = [0, 0];
+  return { averageAge, maxAge };
 }
 
 // export 를 수정하지 마세요.

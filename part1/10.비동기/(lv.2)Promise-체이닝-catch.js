@@ -14,8 +14,11 @@
 // TODO: getDataWithFallback 함수를 작성하세요.
 async function getDataWithFallback(primary, fallback) {
   try {
-    const result = await primary;
-    
+    const result = await primary();
+    return result;
+  } catch {
+    const result = await fallback();
+    return result;
   }
 }
 

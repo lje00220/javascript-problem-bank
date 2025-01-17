@@ -11,7 +11,16 @@
  */
 
 // TODO: 함수를 작성하세요.
-function getFrequency(arr) {}
+function getFrequency(arr) {
+  return arr.reduce((names, name) => {
+    if (name in names) {
+      names[name]++;
+    } else {
+      names[name] = 1;
+    }
+    return names;
+  }, {});
+}
 
 // export 를 수정하지 마세요.
 export { getFrequency };
