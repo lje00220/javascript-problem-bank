@@ -26,6 +26,13 @@ function fixCartReferenceIssue() {
   applyCoupon(userBCart, coupon);
   function applyCoupon(cart, discount) {
     // TODO
+    cart = JSON.parse(JSON.stringify(userACart));
+    for (let elem of Object.values(cart.items)) {
+      elem.price -= discount;
+      console.log(elem);
+    }
+
+    console.log(cart);
   }
 
   return { userACart, userBCart };
