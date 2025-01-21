@@ -16,12 +16,24 @@
 let topKeywordsCache = [];
 
 function updateTopKeywords(keywords) {
-  // TODO
+  const keyObj = keywords.reduce((names, name) => {
+    if (name in names) {
+      names[name]++;
+    } else {
+      names[name] = 1;
+    }
+    return names;
+  }, {});
+
+  const sortedArr = Object.entries(keyObj)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+
+  topKeywordsCache = sortedArr.map((x) => x[0]);
 }
 
 function getTopKeywords() {
-  // TODO
-  return [];
+  return topKeywordsCache;
 }
 
 // export를 수정하지 마세요.
