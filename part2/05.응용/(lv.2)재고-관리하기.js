@@ -15,7 +15,19 @@ const inventory = [
   { id: 200, name: "Mouse", stock: 5 },
 ];
 
-function addProduct(newItem) {}
+function addProduct(newItem) {
+  const keys = [];
+  inventory.forEach((x) => {
+    if (x.id === newItem.id) {
+      x.stock += newItem.stock;
+    }
+    keys.push(x.id);
+  });
+
+  if (!keys.includes(newItem.id)) {
+    inventory.push(newItem);
+  }
+}
 
 // export를 수정하지 마세요.
 export { inventory, addProduct };
