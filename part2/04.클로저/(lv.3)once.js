@@ -9,7 +9,10 @@
  * @returns {Function}
  */
 
-function once(fn) {}
+function once(fn) {
+  const result = fn.bind(once);
+  return result;
+}
 
 // export를 수정하지 마세요.
 export { once };
