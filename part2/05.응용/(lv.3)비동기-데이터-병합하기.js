@@ -22,7 +22,9 @@
  */
 
 // TODO: asyncDataMerger 함수를 작성하세요.
-async function asyncDataMerger(...asyncFunctions) {}
+async function asyncDataMerger(...asyncFunctions) {
+  console.log(asyncFunctions[0]);
+}
 
 // export를 수정하지 마세요.
 export { asyncDataMerger };
