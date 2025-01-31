@@ -16,8 +16,14 @@
 
 // TODO: createConfigManager 함수를 작성하세요.
 function createConfigManager() {
-  const setConfig = (key, value) => {};
-  const getConfig = (key) => {};
+  let config = {};
+  const setConfig = (key, value) => {
+    config = { ...config, [key]: value };
+    return config;
+  };
+  const getConfig = (key) => {
+    return config[key];
+  };
   return { setConfig, getConfig };
 }
 

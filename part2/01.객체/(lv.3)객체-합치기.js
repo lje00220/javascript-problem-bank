@@ -17,9 +17,11 @@
  */
 
 function mergeObjects(...objs) {
-  const result = [...objs];
+  const result = objs;
+  if (result.length === 0) return {};
 
   console.log(result);
+  return result;
 }
 
 // export를 수정하지 마세요.
