@@ -10,6 +10,11 @@
  * @returns {object}
  */
 
-function parseQueryString(queryString) {}
+function parseQueryString(queryString) {
+  console.log("queryString", queryString);
+  let result = queryString;
+  if (result === "") result = { ...queryString };
+  return result;
+}
 
 export { parseQueryString };

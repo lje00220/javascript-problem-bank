@@ -11,11 +11,12 @@
  */
 
 function makeState(initialValue) {
-  const currentValue = initialValue;
+  let currentValue = initialValue;
   const setValue = (value) => {
+    currentValue = value;
     return currentValue;
   };
-  return currentValue, setValue;
+  return [currentValue, setValue];
 }
 
 // export를 수정하지 마세요.

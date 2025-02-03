@@ -10,7 +10,7 @@
  */
 
 function once(fn) {
-  const result = fn.bind(once);
+  const result = once.bind(fn);
   return result;
 }
 
